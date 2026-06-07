@@ -1,0 +1,116 @@
+name: Bug report
+description: Report a reproducible problem in the template (docs, scripts, or HelloWorld scaffold).
+title: "[Bug]: "
+labels:
+  - bug
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for reporting an issue. This repository is a template, so keep reports focused on template assets:
+        - `CodexWorkspace/` docs, prompts, scripts, templates
+        - `ai-pyrevit-developer-template.extension/` scaffold
+
+        If an exception occurs, include full text from the pyRevit Output window.
+
+  - type: checkboxes
+    attributes:
+      label: Pre-flight
+      description: Please confirm before submitting.
+      options:
+        - label: I searched existing issues and did not find a duplicate.
+          required: true
+        - label: This report is about the template repository itself.
+          required: true
+        - label: I reviewed `CodexWorkspace/human/troubleshooting.md`.
+          required: true
+
+  - type: dropdown
+    attributes:
+      label: Affected area
+      multiple: true
+      options:
+        - CodexWorkspace/human (setup, troubleshooting)
+        - CodexWorkspace/skills/.../references (workflow and checklists)
+        - CodexWorkspace/skills/.../assets (prompts/templates)
+        - ai-pyrevit-developer-template.extension scaffold
+        - Repo meta (GitHub, branch/CI, policy scripts)
+        - Other (describe below)
+    validations:
+      required: true
+
+  - type: input
+    attributes:
+      label: Template version
+      description: Paste commit SHA (`git rev-parse HEAD`) or tag/release version.
+      placeholder: e.g. 1a2b3c4d or v0.1.0
+    validations:
+      required: true
+
+  - type: input
+    attributes:
+      label: Revit version (if applicable)
+      description: Include edition and update/build when known (or N/A).
+      placeholder: e.g. Revit 2023.1.4
+    validations:
+      required: true
+
+  - type: input
+    attributes:
+      label: pyRevit version (if applicable)
+      description: Include version/commit (or N/A).
+      placeholder: e.g. pyRevit 4.8.16
+    validations:
+      required: true
+
+  - type: dropdown
+    attributes:
+      label: Install method
+      options:
+        - git clone
+        - Download ZIP
+        - Fork
+        - Other
+    validations:
+      required: true
+
+  - type: textarea
+    attributes:
+      label: Steps to reproduce
+      description: Exact steps someone else can follow.
+      placeholder: |
+        1. ...
+        2. ...
+        3. ...
+    validations:
+      required: true
+
+  - type: textarea
+    attributes:
+      label: Expected behavior
+      placeholder: What you expected to happen.
+    validations:
+      required: true
+
+  - type: textarea
+    attributes:
+      label: Actual behavior
+      placeholder: What actually happened.
+    validations:
+      required: true
+
+  - type: textarea
+    attributes:
+      label: pyRevit Output (error text / stack trace)
+      description: Paste full error text from pyRevit Output.
+      render: text
+
+  - type: textarea
+    attributes:
+      label: Screenshots / recordings (optional)
+      description: Drag and drop media or paste links.
+
+  - type: textarea
+    attributes:
+      label: Additional context (optional)
+      description: Anything else that helps.

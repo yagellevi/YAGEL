@@ -1,0 +1,57 @@
+name: Documentation improvement
+description: Report missing, unclear, outdated docs or broken links.
+title: "[Docs]: "
+labels:
+  - documentation
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for helping improve docs. If possible, include concrete wording or a small diff suggestion.
+
+  - type: checkboxes
+    attributes:
+      label: Pre-flight
+      options:
+        - label: I searched existing issues and did not find a duplicate.
+          required: true
+        - label: I am pointing to a specific doc path or URL in this repository.
+          required: true
+
+  - type: input
+    attributes:
+      label: Doc page
+      description: Paste URL or repo-relative path.
+      placeholder: e.g. CodexWorkspace/human/advanced_workflow.md
+    validations:
+      required: true
+
+  - type: dropdown
+    attributes:
+      label: Type of issue
+      options:
+        - Missing info
+        - Unclear / confusing
+        - Outdated
+        - Broken link
+        - Formatting / rendering
+        - Other
+    validations:
+      required: true
+
+  - type: textarea
+    attributes:
+      label: What is wrong / what should change?
+      description: Be specific.
+    validations:
+      required: true
+
+  - type: textarea
+    attributes:
+      label: Suggested wording (optional)
+      description: Paste proposed text.
+
+  - type: textarea
+    attributes:
+      label: Screenshots (optional)
+      description: Drag and drop media or paste links.
