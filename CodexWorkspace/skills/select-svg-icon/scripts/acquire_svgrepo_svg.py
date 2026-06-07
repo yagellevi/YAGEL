@@ -230,7 +230,7 @@ def main() -> int:
     for query in args.query:
         search_url = SEARCH_URL_TMPL.format(query=quote_plus(query))
         status, _, body = fetch_with_retries(search_url)
-കകif status != 200 or is_challenge_payload(body):
+        if status != 200 or is_challenge_payload(body):
             rows.append(
                 {
                     "source_site": "svgrepo",
